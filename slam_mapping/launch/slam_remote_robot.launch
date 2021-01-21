@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="slam_mapping" name="keyboard_cmd_vel" type="keyboard_cmd_vel.py" required="true" />
+
+  <node pkg="slam_mapping" name="lam" type="slam.py" required="true" />
+  <node pkg="urg_node" name="urg_node" type="urg_node" required="true" >
+        <param name="frame_id" value="base_link"/>
+  </node>
+</launch>
