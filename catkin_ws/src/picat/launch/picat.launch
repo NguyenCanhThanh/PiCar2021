@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="picat" name="ultrasound" type="rtultrasound.py" required="true" />
+  <node pkg="picat" name="motors" type="rtmotor.py" required="true" />
+</launch>

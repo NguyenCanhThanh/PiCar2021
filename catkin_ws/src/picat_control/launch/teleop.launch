@@ -1,0 +1,20 @@
+<launch>
+  <arg name="joy" default="false" />
+  <arg name="joydev" default="/dev/input/js0" />
+  <arg name="key" default="false" />
+  <arg name="speed" default="0.1" />
+
+  <group if="$(arg joy)">
+    <node name="joy_core" pkg="joy" type="joy_node" required="true">
+      <param name="dev" type="string" value="$(arg joydev)" />
+    </node>
+
+    <node pkg="picat_control" name="joystick_control" type="joystick_control.py" required="true" output="screen">
+      <rosparam command="load" file="$(find picat_control)/config/joy_f710.yml" />
+    </node>
+  </group>
+
+  <group if="$(arg key)">
+    <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" args="_speed:=$(arg speed)" output="screen" />
+  </group>
+</launch>

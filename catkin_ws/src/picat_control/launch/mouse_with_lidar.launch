@@ -1,0 +1,9 @@
+<launch>
+  <arg name="port" default="/dev/ttyACM0" />
+
+  <node pkg="picat_control" name="motor" type="motor.py" required="true" />
+
+  <node name="lidar_node" pkg="urg_node" type="urg_node" required="true">
+    <param name="serial_port" value="$(arg port)"/>
+  </node>
+</launch>
