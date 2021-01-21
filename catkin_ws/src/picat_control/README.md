@@ -4,7 +4,7 @@
 
 [![industrial_ci](https://github.com/rt-net/raspimouse_ros_examples/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/raspimouse_ros_examples/actions?query=workflow%3Aindustrial_ci+branch%3Amaster)
 
-Raspberry Pi MouseのROSサンプルコード集です。
+PiCar。
 
 ROS 2のサンプルコード集は[こちら](https://github.com/rt-net/raspimouse_ros2_examples)。
 
